@@ -1,0 +1,227 @@
+							
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+
+
+input[type=text] {
+  width: 100%;
+  
+  margin-bottom: ;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+label {
+font-size:10px;
+  margin-bottom: 1px;
+  display: block;
+  margin-bottom:0px;
+
+}
+
+.btncart {
+  background-color: blue;
+  color: white;
+  padding: 12px;
+  margin: 10px 0;
+  border: none;
+  width: 57.4%;
+  border-radius: 3px;
+  cursor: pointer;
+  font-size: 12px;
+  margin-left:25%;
+}
+
+.btncart:hover {
+  background-color: blue;
+}
+
+
+.payment {
+	float: left;
+	padding:10px;
+ 
+}
+.all {
+	margin-left:25%;
+}
+
+							</style>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Electronics</title>
+ <script src="https://core.spreedly.com/iframe/iframe-v1.min.js"></script>
+	<!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+	<!-- Custom CSS file -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-text-dark color-second-bg scrolling-navbar" style="background-color:#907e6f;">
+			<a class="navbar-brand" href="#">Electronics</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		    <ul class="navbar-nav mr-auto mt-2 mt-lg-0 font-rubik">
+		      <li class="nav-item active">
+		        <a class="nav-link" href="index.html">Home </a>
+		      </li>
+		    </ul>
+     
+		  </div>
+		</nav></header>
+	<main id="main-site" style="margin-top:60px;">
+
+
+<section id="special-price">
+    <div class="container">
+       
+        <div class="grid">
+
+<div class="main" >
+
+
+
+
+						<div class="all">
+						<div class="payment" style="border:1px solid gray;background-color:lightgray;border-radius:10px;">
+						<label for="fname"><i class="fa fa-user"></i> Full Name</label>
+						<input type="text" id="fname" name="firstname" placeholder="Type your first name"><br>
+						<label for="email"><i class="fa fa-envelope"></i> Email</label>
+						<input type="text" id="email" name="email" placeholder="hello.-_-.world@outlook.com"><br>
+						<label for="adr"><i class="fa fa-address-card-o"></i> Address</label>
+						<input type="text" id="adr" name="address" placeholder="542 W. 15th Street"><br>
+						<label for="city"><i class="fa fa-user"></i>  City</label>
+						<input type="text" id="city" name="city" placeholder="New York"><br>
+
+
+						<label for="state"><i class="fa fa-user"></i> State</label>
+						<input type="text" id="state" name="state" placeholder="NY"><br>
+
+
+						<label for="zip"><i class="fa fa-user"></i> Zip</label>
+						<input type="text" id="zip" name="zip" placeholder="10001"><br>
+						</div>
+
+						<div class="payment" style="border:1px solid gray;background-color:lightgray;border-radius:10px;">
+							 <h6>Payment</h6>
+							<label for="fname">Accepted Cards</label>
+            <div class="icon-container">
+              <i class="fab fa-cc-visa" style="color:navy;"></i>
+              <i class="fab fa-cc-amex" style="color:blue;"></i>
+              <i class="fab fa-cc-mastercard" style="color:red;"></i>
+              <i class="fab fa-cc-discover" style="color:orange;"></i>
+            </div>
+						<label for="cname">Name on Card</label>
+						<input type="text" id="cname" name="cardname" placeholder="Type Your Name on Card"><br>
+						<label for="ccnum">Credit card number</label>
+						<input type="text" id="ccnum" name="cardnumber" placeholder="1111-2222-3333-4444"><br>
+						<label for="expmonth">Exp Month</label>
+						<input type="text" id="expmonth" name="expmonth" placeholder="September"><br>
+						<label for="expyear">Exp Year</label>
+						<input type="text" id="expyear" name="expyear" placeholder="2023"><br>
+						<label for="cvv"><i class="fa fa-user"></i> CVV</label>
+						<input type="text" id="cvv" name="cvv" placeholder="352">
+						</div>
+						</div>
+						<button onclick="myFunction()" type="submit" value="Continue to checkout" class="btncart">Continue</button>
+
+<script>
+function myFunction() {
+  alert("Oops! Somthing Went wrong!if you have a payment issue please contact us: hello.-_-.world@outlook.com");
+}
+</script>
+  
+
+
+			</div>
+			</div>
+    
+            </div>
+        </div>
+    </div>
+</section>
+	
+
+</script>
+	</main>
+	<footer id="footer" class="bg-dark text-white py-5 mt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-12">
+					<h4 class="font-rubik font-size-20">Mobile Shopee</h4>
+					<p class="font-size-14 font-rale text-white-50"> kskjdksdjslkakalskalsklaska<br>lksqoiqeiowoweowieowioes,<br>msdmskdjksjdksjdksjdksjd<br>ksdjskdjskdjskdjkjk</p>
+				</div>
+				<div class="col-lg-4 col-12">
+					<h4 class="font-rubik font-size-20">Newslatter</h4>
+					<form class="form-row">
+						<div class="col">
+							<input type="text" class="form-control" placeholder="Email">
+						</div>
+						<div class="col">
+							<button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-lg-2 col-12">
+					<h4 class="font-rubik font-size-20">Information</h4>
+					<div class="d-flex-column flex-wrap">
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Delivery Information</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Privacy Policy</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Terms & Conditions</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-12">
+					<h4 class="font-rubik font-size-20">Account</h4>
+					<div class="d-flex-column flex-wrap">
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Wish List</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newsletters</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<div class="copyright text-center bg-dark text-white py-2">
+		<p class="font-rale font-size-14">&copy; Copyrights 2020. Desing By <a href="#" class="color-second">Daily Tuition</a></p>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- Owl Carousel Js file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+<!--  isotope plugin cdn  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+<!-- Custom Javascript -->
+<script src="index.js"></script>
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+

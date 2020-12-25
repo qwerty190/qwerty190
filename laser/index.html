@@ -1,0 +1,570 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<style>
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1f1;
+  padding: 20px;
+  font-family: Arial;
+}
+
+/* Center website */
+.main {
+  max-width: 1000px;
+  margin: auto;
+}
+
+h1 {
+  font-size: 50px;
+  word-break: break-all;
+}
+
+
+.row {
+  margin: 10px -16px;
+}
+
+/* Add padding BETWEEN each column */
+.row,
+.row > .column {
+  padding: 8px;
+}
+
+/* Create three equal columns that floats next to each other */
+.column {
+  float: left;
+  width: 33.33%;
+  display: none; /* Hide all elements by default */
+}
+
+/* Clear floats after rows */ 
+.row:after {
+  content: "";
+  display: table;
+  clear: both;
+}
+
+/* Content */
+.content {
+  background-color: white;
+  padding: 10px;
+}
+
+/* The "show" class is added to the filtered elements */
+.show {
+  display: block;
+}
+
+/* Style the buttons */
+.btn {
+  border: none;
+  outline: none;
+  padding: 12px 16px;
+  cursor: pointer;
+
+  
+}
+
+.btn:hover {
+  background-color: #ddd;
+}
+
+.btn.active {
+  background-color: #666;
+  color: white;
+}
+
+
+
+
+/* The Modal (background) */
+.modal {
+  display: none; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top:px; /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  overflow: auto; /* Enable scroll if needed */
+  background-color: rgb(0,0,0); /* Fallback color */
+  background-color: rgba(0,0,0,0.4); /* Black w/ opacity */
+}
+
+/* Modal Content */
+.modal-content {
+  background-color: #fefefe;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #888;
+  width: 80%;
+}
+
+/* The Close Button */
+.close {
+  color: #aaaaaa;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+/*-------------------------------*/
+
+
+.font-size-12 {
+	font-size: 8px;
+}
+.price {
+	color:green;
+}
+
+img {
+	margin-bottom: 10px;
+
+}
+
+
+
+#myInput {
+  background-image: url('/css/searchicon.png');
+  background-position: 10px 12px;
+  background-repeat: no-repeat;
+  width: 90%;
+  font-size: 16px;
+  padding: 8px 20px 8px 40px;
+  /*border: 1px solid #ddd;*/
+  border:1px solid #907e6f;;
+  margin-bottom: ;
+  color:white;
+  background-color:#907e6f;
+}
+
+#myUL {
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+#myUL li a {
+  border: 1px solid #ddd;
+  margin-top: -1px; /* Prevent double borders */
+ /* background-color: #f6f6f6;*/
+   background-color: white;
+  padding: 12px;
+  text-decoration: none;
+  font-size: 18px;
+  color: black;
+  display: block
+}
+
+#myUL li a:hover:not(.header) {
+  /*background-color: #eee;*/
+}
+
+
+	</style>
+	<title></title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>shope4u</title>
+	<!-- Bootstrap CDN -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+    <!-- Owl-carousel CDN -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" integrity="sha256-UhQQ4fxEeABh4JrcmAJ1+16id/1dnlOEVCFOxDef9Lw=" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" integrity="sha256-kksNxjDRxd/5+jGurZUJd1sdR2v+ClrCl3svESBaJqw=" crossorigin="anonymous" />
+    <!-- font awesome icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.13.0/css/all.min.css" integrity="sha256-h20CPZ0QyXlBuAw7A+KluUYx/3pK+c7lYEpqLTlxjYQ=" crossorigin="anonymous" />
+	<!-- Custom CSS file -->
+	<link rel="stylesheet" href="style.css">
+</head>
+<body>
+	<header>
+		<nav class="navbar fixed-top navbar-expand-lg navbar-dark navbar-text-dark color-second-bg scrolling-navbar" style="background-color:#907e6f;">
+			<a class="navbar-brand" href="#">shope4u</a>
+		  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarTogglerDemo02" aria-controls="navbarTogglerDemo02" aria-expanded="false" aria-label="Toggle navigation">
+		    <span class="navbar-toggler-icon"></span>
+		  </button>
+		  <div class="collapse navbar-collapse" id="navbarTogglerDemo02">
+		    
+<input type="text" id="myInput" onkeyup="myFunction()" class="px-3 border-right border-left ml-4 mr-4 text-light" placeholder="Search for names.." title="Type in a name">
+		  </div>
+		</nav></header>
+	<main id="main-site" style="margin-top:60px;">
+
+
+<section id="special-price">
+    <div class="container">
+       
+        <div class="grid">
+
+<div class="main">
+
+
+<br><br>
+<div id="myBtnContainer">
+  <button class="btn active" onclick="filterSelection('all')"> Show all</button>
+  <button class="btn" style="background-color:lightgray;color:white" onclick="filterSelection('beauty')"> Beauty</button>
+  <button class="btn" style="background-color:lightgray;color:white" onclick="filterSelection('laptop')"> Laptop</button>
+  <button class="btn" style="background-color:lightgray;color:white" onclick="filterSelection('ipad')">iPad</button>
+</div>
+<!-- Portfolio Gallery Grid -->
+		<ul id="myUL">
+		<div class="row">
+
+		<div class="column beauty" style="text-align:center;">
+		<div class="content">
+
+		<li><a href="checkout.html"><img src="assets/beauty/laser2.jpg" id="macbookpro" alt="laser" style="width:18%">
+
+
+
+			<br><span style="color:gray"><span class="badge badge-danger" style="opacity:0.5;margin-top:0px;">New</span>&nbsp;Laser Hair Remover</span><br><p style="font-size:10px;">Laser Hair Removal Machine for Hair Removal Hair and Body Removal Machine Photos Permanent Pulsed Light, Most Effective Hair Removal Device in the Market: MLAY ipl laser hair removal uses safe IPL and laser energies, to break the cycle of hair regrowth, long-term inhibition of hair growth and never rebound.</p>
+
+       <div class="rating text-warning font-size-12">
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		</div><p style="color:green;">$590.00</p></a></li>
+		</div>
+		</div>
+
+
+
+		<div class="column laptop" style="text-align:center;">
+		<div class="content">
+		<li><a href="checkout.html"><img src="assets/laptop/10.jpeg" id="macbookpro" alt="laser" style="width:20%"><br><span style="color:gray">MacBook Pro</span><br><p style="font-size:10px;">MacBook Pro 
+    Ninth-generation 6-Core Intel Core i7 Processor
+    Stunning 16-inch Retina Display with True Tone technology
+    Touch Bar and Touch ID
+    AMD Radeon Pro 5300M Graphics with GDDR6 memory
+    Ultrafast SSD
+    Intel UHD Graphics 630
+    Six-speaker system with force-cancelling woofers
+</p>
+			
+    <div class="rating text-warning font-size-12">
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+
+		</div><p style="color:green;">$8200</p></a></li>
+
+		</div>
+		</div>
+
+
+		<div class="column laptop" style="text-align:center;">
+		<div class="content">
+		<li><a href="checkout.html"><img src="assets/laptop/11.jpeg" alt="laser" style="width:20%"><br><span style="color:gray">MacBook</span><br>
+         <p style="font-size:10px;">MacBook 
+    Stunning 13.3-inch Retina display with True Tone technology
+    Backlit Magic Keyboard and Touch ID
+    Tenth-generation Intel Core i3 processor
+    Intel Iris Plus Graphics
+    Fast SSD storage
+    8GB of memory
+    Stereo speakers with wider stereo sound
+</p><div class="rating text-warning font-size-12">
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		</div><p style="color:green;">$6890</p></a></li>
+		</div>
+		</div>
+
+ <!-- Set up a container element for the button -->
+    <div id="paypal-button-container"></div>
+
+    <!-- Include the PayPal JavaScript SDK -->
+    <script src="https://www.paypal.com/sdk/js?client-id=sb&currency=USD"></script>
+
+    <script>
+        // Render the PayPal button into #paypal-button-container
+        var amount = '<?php echo isset($subTotal) ? $Cart->getSum($subTotal) : 0; ?>';
+        paypal.Buttons({
+            
+            // Set up the transaction
+            createOrder: function(data, actions) {
+                return actions.order.create({
+                    purchase_units: [{
+                        amount: {
+                            value: amount,
+                        }
+                    }]
+                });
+            },
+
+            // Finalize the transaction
+            onApprove: function(data, actions) {
+                return actions.order.capture().then(function(details) {
+                    // Show a success message to the buyer
+                    alert('Transaction completed by ' + details.payer.name.given_name + '!');
+                });
+            }
+
+
+        }).render('#paypal-button-container');
+    </script>
+
+
+
+
+
+		<div class="column laptop" style="text-align:center;">
+		<div class="content">
+		<li><a href="checkout.html"><img src="assets/laptop/macbookpro13.jpeg" alt="laser" style="width:20%"><br><span style="color:gray">MacBookPro13</span><br><p style="font-size:10px;">MacBookPro13 
+    Tenth-generation quad-core Intel Core i5 processor
+    Brilliant Retina display with True Tone technology
+    Backlit Magic Keyboard
+    Touch Bar and Touch ID
+    Intel Iris Plus Graphics
+    Ultrafast SSD
+    Four Thunderbolt 3 (USB-C) ports
+</p><div class="rating text-warning font-size-12">
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		</div><p style="color:green;">$7290</p></a></li>
+		</div>
+		</div>
+
+
+		<div class="column ipad" style="text-align:center;">
+		<div class="content">
+		<li><a href="checkout.html"><img src="assets/ipad/6.png" alt="laser" style="width:20%"><br><span style="color:gray">iPad Pro</span><br><p style="font-size:10px;">iPad Pro 
+    12.9-inch edge-to-edge Liquid Retina display with ProMotion, True Tone, and P3 wide color
+    A12Z Bionic chip with Neural Engine
+    12MP Wide camera, 10MP Ultra Wide camera, and LiDAR Scanner
+    7MP TrueDepth front camera
+    Face ID for secure authentication and Apple Pay
+    Four speaker audio and five studio-quality microphones
+    802.11ax Wi-Fi 6
+</p><div class="rating text-warning font-size-12">
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+
+		</div><p style="color:green;">$4780</p></a></li>
+		</div>
+		</div>
+
+
+		<div class="column ipad" style="text-align:center;">
+		<div class="content">
+		<li><a href="checkout.html"><img src="assets/ipad/7.png" alt="laser" style="width:20%"><br><span style="color:gray">iPad Air</span><br><p style="font-size:10px;">iPad Air 
+    Stunning 10.9-inch Liquid Retina display with True Tone and P3 wide color
+    A14 Bionic chip with Neural Engine
+    Touch ID for secure authentication and Apple Pay
+    12MP back camera, 7MP FaceTime HD front camera
+    Available in Silver, Space Gray, Rose Gold, Green, and Sky Blue
+    Wide stereo audio
+    Wi-Fi 6 (802.11ax)
+</p><div class="rating text-warning font-size-12">
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="fas fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		
+		</div><p style="color:green;">$4209</p></a></li>
+		</div>
+		</div>
+
+
+		<div class="column ipad" style="text-align:center;">
+		<div class="content">
+		<li><a href="checkout.html"><img src="assets/ipad/8.png" alt="laser" style="width:20%"><br><span style="color:gray">iPad Mini</span><br>
+		<p style="font-size:10px;">iPad Mini
+    7.9-inch Retina Display with True Tone and wide Color
+    A12 Bionic chip
+    Touch ID fingerprint sensor
+    8MP back camera, 7MP FaceTime HD front camera
+    Stereo speakers
+    802.11ac Wi-Fi and Gigabit-class LTE cellular data
+    Up to 10 hours of battery life
+</p><p><div class="rating text-warning font-size-12">
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		<span><i class="far fa-star"></i></span>
+		</div><p style="color:green;">$3599</p></a></li>
+		</div>
+		</div>
+
+
+
+
+		<!-- END GRID -->
+		</div>
+
+		<!-- END MAIN -->
+		</div>
+
+		<br>
+
+
+
+		</ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+	</main>
+	<footer id="footer" class="bg-dark text-white py-5 mt-4">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-3 col-12">
+					<h4 class="font-rubik font-size-20">Shope4u</h4>
+					contact us: <br>hello.-_-.world@outlook.com
+					<p class="font-size-14 font-rale text-white-50"> 
+				</div>
+				<div class="col-lg-4 col-12">
+					<h4 class="font-rubik font-size-20">Newslatter</h4>
+					<form class="form-row">
+						<div class="col">
+							<input type="text" class="form-control" placeholder="Email">
+						</div>
+						<div class="col">
+							<button type="submit" class="btn btn-primary mb-2">Subscribe</button>
+						</div>
+					</form>
+				</div>
+				<div class="col-lg-2 col-12">
+					<h4 class="font-rubik font-size-20">Information</h4>
+					<div class="d-flex-column flex-wrap">
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">About Us</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Delivery Information</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Privacy Policy</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Terms & Conditions</a>
+					</div>
+				</div>
+				<div class="col-lg-2 col-12">
+					<h4 class="font-rubik font-size-20">Account</h4>
+					<div class="d-flex-column flex-wrap">
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">My Account</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Order History</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Wish List</a>
+						<a href="#" class="font-rale font-size-14 text-white-50 pb-1">Newsletters</a>
+					</div>
+				</div>
+			</div>
+		</div>
+
+	</footer>
+	<div class="copyright text-center bg-dark text-white py-2">
+		<p class="font-rale font-size-14">&copy; Copyrights 2020. Desing By <a href="#" class="color-second">Shop4u</a></p>
+	</div>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.0/jquery.min.js" integrity="sha256-xNzN2a4ltkB44Mc/Jz3pT4iU1cmeR0FkXs4pru/JxaQ=" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js" integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js" integrity="sha384-wfSDF2E50Y2D1uUdj0O3uMBJnjuUD4Ih7YwaYd1iqfktj0Uod8GCExl3Og8ifwB6" crossorigin="anonymous"></script>
+<!-- Owl Carousel Js file -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js" integrity="sha256-pTxD+DSzIwmwhOqTFN+DB+nHjO4iAsbgfyFq5K5bcE0=" crossorigin="anonymous"></script>
+<!--  isotope plugin cdn  -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.isotope/3.0.6/isotope.pkgd.min.js" integrity="sha256-CBrpuqrMhXwcLLUd5tvQ4euBHCdh7wGlDfNz8vbu/iI=" crossorigin="anonymous"></script>
+<!-- Custom Javascript -->
+<script src="index.js"></script>
+
+
+
+<script>
+filterSelection("all")
+function filterSelection(c) {
+  var x, i;
+  x = document.getElementsByClassName("column");
+  if (c == "all") c = "";
+  for (i = 0; i < x.length; i++) {
+    w3RemoveClass(x[i], "show");
+    if (x[i].className.indexOf(c) > -1) w3AddClass(x[i], "show");
+  }
+}
+
+function w3AddClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    if (arr1.indexOf(arr2[i]) == -1) {element.className += " " + arr2[i];}
+  }
+}
+
+function w3RemoveClass(element, name) {
+  var i, arr1, arr2;
+  arr1 = element.className.split(" ");
+  arr2 = name.split(" ");
+  for (i = 0; i < arr2.length; i++) {
+    while (arr1.indexOf(arr2[i]) > -1) {
+      arr1.splice(arr1.indexOf(arr2[i]), 1);     
+    }
+  }
+  element.className = arr1.join(" ");
+}
+
+
+// Add active class to the current button (highlight it)
+var btnContainer = document.getElementById("myBtnContainer");
+var btns = btnContainer.getElementsByClassName("btn");
+for (var i = 0; i < btns.length; i++) {
+  btns[i].addEventListener("click", function(){
+    var current = document.getElementsByClassName("active");
+    current[0].className = current[0].className.replace(" active", "");
+    this.className += " active";
+  });
+}
+</script>
+
+
+<script>
+function myFunction() {
+    var input, filter, ul, li, a, img, i, txtValue;
+    input = document.getElementById("myInput");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        a = li[i].getElementsByTagName("a")[0];
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+            li[i].style.display = "";
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+}
+</script>
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
